@@ -6,6 +6,7 @@ var mainController = {};
 
 mainController.index = function(req, res) {
     console.log('called root url');
+    res.send('real time notification socket server is running!');
 };
 
 mainController.newNotification = function(req, res) {
