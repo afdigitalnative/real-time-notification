@@ -10,7 +10,7 @@ mainController.index = function(req, res) {
 };
 
 mainController.newNotification = function(req, res) {
-    console.log(req.body);
+    //console.log(req.body);
     
     socketNotify.send_new_notify(req.body);
 

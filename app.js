@@ -66,7 +66,7 @@ const port = process.env.PORT || 3003;
 var http = require('http').Server(app);
 const socketio = require('socket.io')(http, {
   cors: {
-    origin: "http://localhost, https://dev2.virtualstudio.events",
+    origin: "*",
     methods: ["GET", "POST"],
     credentials: true
   }
