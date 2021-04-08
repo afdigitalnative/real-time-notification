@@ -13,12 +13,12 @@ var socketNotify = {};
     socketio.on('connection', function(socket) {
         console.log('user connected', socket.request._query['user_id']);
 
-        //socketio.emit('new', {title: "test", content: "test content"});
+        socket.join(socket.request._query['host']);
     });
 }
 
 socketNotify.send_new_notify = function(notify_data) {
-    socketNotify.socketio.emit('new', notify_data)
+    socketNotify.socketio.to(notify_data.server_host).emit('new', notify_data)
 }
 
 module.exports = socketNotify;
