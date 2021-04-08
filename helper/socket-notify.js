@@ -18,7 +18,7 @@ var socketNotify = {};
 }
 
 socketNotify.send_new_notify = function(notify_data) {
-    socketNotify.socketio.to(notify_data.server_host).emit('new', notify_data)
+    socketNotify.socketio.emit('new', notify_data); // .to(notify_data.server_host)
 }
 
 module.exports = socketNotify;
